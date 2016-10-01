@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# npm run start-dev
+npm run build
+
+if [[ $# -lt 1 ]]
+then
+  TEST=1 node_modules/.bin/cucumber.js
+else
+  TEST=1 node_modules/.bin/cucumber.js "$1"
+fi

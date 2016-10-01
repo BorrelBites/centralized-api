@@ -1,0 +1,12 @@
+#!/bin/sh
+
+cd "$(dirname "$0")"
+source ./inc/utils.bash
+
+if cmd_exists docker ; then
+	cd ../
+	docker run -p 49160:3000 -d blackdove-co/api-v2-mockup
+else
+	npm run build
+	npm start
+fi
