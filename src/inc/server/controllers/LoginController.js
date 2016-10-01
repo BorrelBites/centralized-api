@@ -45,6 +45,7 @@ export class LoginController {
         if (users[email] && users[email].password == passw) {
             return res.json({
                 "email":email,
+                "success": true,
                 "type":users[email].accountType,
                 "mid": users[email].mid
             });
